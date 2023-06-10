@@ -1,0 +1,29 @@
+POST http://localhost:5000/subscribers
+Content-Type: application/json
+
+{
+    "name":"gunjalnew",
+    "subscribedToChannel": "web dev"
+}
+###
+GET http://localhost:5000/subscribers/getSubscriber/
+###
+POST http://localhost:5000/customer/api/register/
+Content-Type: application/json
+
+{
+    "cname":"gunjalnew",
+    "email": "web",
+    "pwd": "1234"
+}
+###
+POST http://localhost:5000/restaurant/api/register/
+Content-Type: application/json
+
+{
+    "rname":"gunjalnew",
+    "email": "web",
+    "pwd": "1234"
+}
+###
+POST http://localhost:5000/customer/api/fetchaddress/3

@@ -1,0 +1,121 @@
+.register_cen {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.reg {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    max-width: 500px;
+}
+
+.register__logo {
+    height: 32px;
+    width: auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.register_wc {
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+}
+
+.register_wc > h4 {
+    font-size: 24px;
+    line-height: 30px;
+    font-family: Helvetica, sans-serif;
+    margin-bottom: 24px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.register__container {
+    display: flex !important;
+    align-items: left;
+    flex-direction: column;
+}
+
+.register__container > p {
+    font-size: 14px !important;
+    line-height: 20px !important;
+    margin-bottom: 8px !important;
+    font-weight: inherit !important;
+}
+
+.register__container > form {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.register__container > form > input {
+    font-size: 14px !important;
+    line-height: 20px !important;
+    height: 40px !important;
+    padding-left: 8px;
+    border: 1px solid #E0E0E0 !important;
+    margin-bottom: 12px;
+}
+
+.register__button {
+    font-size: 14px !important;
+    line-height: 20px !important;
+    height: 40px !important;
+    background-color: #3e9920;
+    border: 1px solid #3e9920 !important;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.register__button:hover {
+    background-color: #6bc93e;
+}
+
+.register__text {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    
+    line-height: 16px;
+    margin-top: 12px;
+}
+.register__container > p span {
+    color: red;
+}
+
+.register__create {
+    color: #3e9920;
+    margin-left: 2px;
+}
+
+.register_ul {
+    text-decoration: none;
+    
+}
+
+/* Media Queries */
+@media screen and (max-width: 600px) {
+  .reg {
+    width: 90%;
+    max-width: none;
+  }
+
+  .register__container > form > input {
+    height: 36px !important;
+  }
+
+  .register__button {
+    height: 36px !important;
+  }
+
+  .register__text {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
