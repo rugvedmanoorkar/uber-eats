@@ -10,6 +10,7 @@ import RRegister from './restaurant/Register'
 import RProfile from './restaurant/UpdateProfile';
 import CProfile from './customer/UpdateProfile';
 import CHome from "./customer/Home";
+import CHome2 from "./customer/Home copy";
 import RHome from "./restaurant/Home";
 import Resprofile  from './restaurant/Resprofile';
 import Adddish from './dish/Adddish'
@@ -52,7 +53,10 @@ function App() {
           </Route>
           <Route path='/chome/'>
             <CHome/>
+            
           </Route>
+          <Route path='/chome2/'>
+            <CHome2/></Route>
           <Route path='/rhome/'>
             <RHome/>
           </Route>

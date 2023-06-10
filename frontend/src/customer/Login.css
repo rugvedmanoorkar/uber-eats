@@ -3,30 +3,34 @@
     align-items: center;
     flex-direction: column;
 }
+
 .logi {
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     height: auto;
     width: 500px;
 }
+
 .login__logo {
-    height: 32px;
+    height: 40px;
     width: auto;
-    margin-top: 100px;
+    margin-top: 80px;
     text-align: center;
 }
 
-.login_wc{
+.login_wc {
     display: flex;
-    align-items: left;
+    align-items: center;
     flex-direction: column;
 }
+
 .login_wc > h4 {
     font-size: 30px;
     line-height: 36px;
-    font-family: Helvetica,sans-serif;
+    font-family: "Uber Move", sans-serif;
     margin-bottom: 36px;
     margin-top: 70px;
+    text-align: center;
 }
 
 .login__container {
@@ -34,23 +38,20 @@
     align-items: left;
     flex-direction: column;
 }
+
 .login__container > p {
     font-size: 16px !important;
     line-height: 24px !important;
     margin-bottom: 8px !important;
     font-weight: inherit !important;
 }
-/* .login__container > form {
-    display:flex !important;
-    flex-direction:column !important;
-} */
 
 .login__container > form > input {
     font-size: 16px !important;
     line-height: 24px !important;
     height: 48px !important;
     padding-left: 10px;
-    border: 1px solid #E0E0E0 !important;
+    border: 1px solid #e0e0e0 !important;
     margin-bottom: 16px;
 }
 
@@ -58,23 +59,65 @@
     font-size: 16px !important;
     line-height: 24px !important;
     height: 48px !important;
-    background-color: #3e9920;
-    border: 1px solid #3e9920 !important;
+    background-color: #000000;
+    border: 1px solid #000000 !important;
     color: white;
     font-weight: 500;
+    cursor: pointer;
 }
 
-.login__text{
+.login__button:hover {
+    background-color: #2d2d2d;
+}
+
+.login__text {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     flex-direction: row;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 16px;
 }
 
-.login__create{
-    color: #3e9920;
+.login__create {
+    color: #000000;
     margin-left: 2px;
 }
 
-.login_ul{
+.login_ul {
     text-decoration: none;
+}
+
+/* Media Queries */
+@media screen and (max-width: 600px) {
+    .logi {
+        width: 90%;
+    }
+
+    .login__logo {
+        margin-top: 40px;
+    }
+
+    .login_wc > h4 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    .login__container > p {
+        font-size: 14px !important;
+        line-height: 20px !important;
+    }
+
+    .login__container > form > input {
+        height: 40px !important;
+    }
+
+    .login__button {
+        height: 40px !important;
+    }
+
+    .login__text {
+        font-size: 12px;
+        line-height: 16px;
+    }
 }

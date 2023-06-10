@@ -171,6 +171,7 @@ const Home = () => {
   }, [filters]);
 
   return (
+    
     <div className="cushome">
       <div className="header__upper">
         <div
@@ -210,118 +211,92 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div
+      <div className="food-tags"
         style={{
           paddingTop: 110,
           paddingLeft: 40,
-          paddingRight: 40,
           display: "flex",
           justifyContent: "space-between"
-          
         }}
       >
-        <div style={{
-          cursor: "pointer"
-        }}>
+        <div>
           <img
             src="https://d4p17acsd5wyj.cloudfront.net/shortcuts/deals.png"
             style={{ height: "75px" }}
           ></img>
           <p style={{ paddingLeft: 10 }}>Deals</p>
         </div>
-        <div style={{
-          cursor: "pointer"
-        }}>
+        <div>
           <img
             src="https://d4p17acsd5wyj.cloudfront.net/shortcuts/convenience.png"
             style={{ height: "75px" }}
           ></img>
           <p>Convienience</p>
         </div>
-        <div style={{
-          cursor: "pointer"
-        }}>
+        <div>
           <img
             src="https://d4p17acsd5wyj.cloudfront.net/shortcuts/alcohol.png"
             style={{ height: "75px" }}
           ></img>
           <p style={{ paddingLeft: 20 }}>Alcohol</p>
         </div>
-        <div style={{
-          cursor: "pointer"
-        }}>
+        <div>
           <img
             src="https://d4p17acsd5wyj.cloudfront.net/shortcuts/pharmacy.jpg"
             style={{ height: "75px" }}
           ></img>
           <p>Pharmacy</p>
         </div>
-        <div style={{
-          cursor: "pointer"
-        }}>
+        <div>
           <img
             src="https://d4p17acsd5wyj.cloudfront.net/shortcuts/baby.png"
             style={{ height: "75px" }}
           ></img>
           <p style={{ paddingLeft: 20 }}> Baby</p>
         </div>
-        <div style={{
-          cursor: "pointer"
-        }}>
+        <div>
           <img
             src="https://d4p17acsd5wyj.cloudfront.net/shortcuts/specialty_foods.jpg"
             style={{ height: "75px" }}
           ></img>
           <p>Speciality foods</p>
         </div>
-        <div style={{
-          cursor: "pointer"
-        }}>
+        <div>
           <img
             src="https://d4p17acsd5wyj.cloudfront.net/shortcuts/flowers.jpg"
             style={{ height: "75px" }}
           ></img>
           <p style={{ paddingLeft: 20 }}>Flowers</p>
         </div>
-        <div style={{
-          cursor: "pointer"
-        }}>
+        <div>
           <img
             src="https://d4p17acsd5wyj.cloudfront.net/shortcuts/retail.jpg"
             style={{ height: "75px" }}
           ></img>
           <p style={{ paddingLeft: 20 }}> Retail</p>
         </div>
-        <div style={{
-          cursor: "pointer"
-        }}>
+        <div>
           <img
             src="https://d4p17acsd5wyj.cloudfront.net/shortcuts/top_eats.png"
             style={{ height: "75px" }}
           ></img>
           <p style={{ paddingLeft: 10 }}>Top Eats</p>
         </div>
-        <div style={{
-          cursor: "pointer"
-        }}>
+        <div>
           <img
             src="https://d4p17acsd5wyj.cloudfront.net/shortcuts/cuisines/coffeeandtea.png"
             style={{ height: "75px" }}
           ></img>
           <p style={{ paddingLeft: 20 }}>Coffee</p>
         </div>
-        <div style={{
-          cursor: "pointer"
-        }}>
+        <div>
           <img
             src="https://d4p17acsd5wyj.cloudfront.net/shortcuts/cuisines/bakery.png"
             style={{ height: "75px" }}
           ></img>
           <p style={{ paddingLeft: 15 }}>Bakery</p>
         </div>
-        <div style={{
-          cursor: "pointer"
-        }}>
+        <div>
           <img
             src="https://d4p17acsd5wyj.cloudfront.net/shortcuts/cuisines/asian.png"
             style={{ height: "75px" }}
