@@ -8,18 +8,17 @@ import { LocationOn } from "@mui/icons-material";
 import "./Resprofile.css";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { logout } from "../actions/userActions";
 import CustomerSidebar from "../components/CustomerSidebar";
 import { Menu } from "@mui/icons-material";
-import Cart from "../components/Cart"
-import {useSelector } from "react-redux";
+import Cart from "../components/Cart";
+import { useSelector } from "react-redux";
 
 var _ = require("lodash");
 
 function Resprofile() {
-
-  const user= useSelector((state)=>state.user)
+  const user = useSelector((state) => state.user);
   const history = useHistory();
   const dispatch = useDispatch();
   const [restaurant, setRestaurant] = useState([]);
@@ -37,7 +36,7 @@ function Resprofile() {
       setshadow("none");
     }
   });
-  
+
   useEffect(() => {
     console.log(restaurantId);
     getRestaurant();
@@ -62,7 +61,7 @@ function Resprofile() {
 
   const getDishes = async () => {
     await axios
-      .post(`/restaurant/api/getdish/${restaurantId}`,)
+      .post(`/restaurant/api/getdish/${restaurantId}`)
       .then((responseData) => {
         console.log("res", responseData);
         if (responseData.data.error) {
@@ -91,7 +90,7 @@ function Resprofile() {
           <div className="header__upperheaderleft">
             <Menu
               style={{
-                marginRight: "30px",
+                marginRight: "30px"
               }}
             />
 
@@ -101,7 +100,7 @@ function Resprofile() {
             <LocationOn />
             <input type="text" placeholder="What are you craving? " />
           </div>
-          <Cart/>
+          <Cart />
 
           <div className="header__upperheaderright" onClick={signout}>
             <p> Sign out </p>

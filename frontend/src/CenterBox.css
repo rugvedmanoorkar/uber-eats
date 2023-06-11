@@ -31,3 +31,9 @@
     color: #000000;
     font-weight: normal;
 }
+.custom-link {
+    /* Add your custom styles for the link here */
+    /* This will override the default link styling */
+    text-decoration: none;
+    color: inherit;
+  }

@@ -1,4 +1,4 @@
-.name{
+/* .name{
     font-family: UberMove, sans-serif;
     font-weight: 700;
     padding-left: 20px;
@@ -14,4 +14,49 @@
     padding-left: 20px;
     padding-bottom: 20px;
     font-size: 15px;
-}
+} */
+
+  .name {
+    padding-bottom: 10px;
+  }
+
+  .name h1 {
+    font-family: UberMove, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    color: #333;
+  }
+
+  .desc {
+    padding-bottom: 20px;
+  }
+
+  .desc p {
+    font-size: 16px;
+    margin: 0;
+    color: #666;
+  }
+
+  .desc p:first-child {
+    margin-bottom: 5px;
+  }
+
+  .desc p:last-child {
+    margin-top: 5px;
+  }
+
+  .desc p span {
+    font-weight: 700;
+  }
+
+  h2 {
+    font-family: UberMove, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    color: #333;
+    padding-top: 10px;
+    padding-bottom: 5px;
+  }
+

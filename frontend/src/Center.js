@@ -2,7 +2,7 @@ import React from 'react';
 import './Center.css';
 import {Android,Apple} from "@mui/icons-material";
 import CenterBox from './CenterBox';
-
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 
 function Center(){
@@ -27,7 +27,10 @@ function Center(){
         </div>
         <div className="center__center">
         <CenterBox  title="feed your employees"  description="create a business account"   imgurl="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/cef389b486cb4827e6ba007f26ebddab.svg"   />
-        <CenterBox title="your restaurant deliverd"  description="add your restaurant"   imgurl="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/7f56b34e6c253cb54a35bacf5150dde9.svg" />
+        
+        <CenterBox title="your restaurant deliverd"  description="add your restaurant"  href="/rregister" imgurl="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/7f56b34e6c253cb54a35bacf5150dde9.svg" />
+              
+        
         <CenterBox title="deliver with uber eats"  description="sign up to deliver"   imgurl="https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/84d6770ca439c4b1ba2d6f53adc1d039.svg" />
 
 
