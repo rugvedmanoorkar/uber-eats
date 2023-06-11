@@ -19,7 +19,7 @@ const Restaurants = ({ Name, Opens_at, imageKey, id ,desc}) => {
   const [icon, seticon] = useState([false]);
   const user = useSelector((state) => state.user);
   const [favrestaurants, setRestaurants] = useState([]);
-
+  console.log("Description ", desc)
   function addfav() {
     seticon(true);
     const Req = {
@@ -111,9 +111,9 @@ const Restaurants = ({ Name, Opens_at, imageKey, id ,desc}) => {
         <Typography variant="body2" color="text.secondary">
             Opens at: {Opens_at}
           </Typography>
-          {/* <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="text.secondary">
             {desc}
-          </Typography> */}
+          </Typography>
         </CardContent>
         <CardActions disableSpacing>
           <IconButton aria-label="add to favorites">

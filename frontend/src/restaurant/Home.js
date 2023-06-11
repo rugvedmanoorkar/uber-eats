@@ -10,15 +10,15 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutRestaurant, loginRestaurant } from "../actions/resActions";
-import { styled} from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import RestaurantSidebar from "../components/RestaurantSidebar";
 import { Menu, LocationOn } from "@mui/icons-material";
-
+import Restaurantpic from "../components/Restaurantpic";
 
 const Home = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const restauran= useSelector((state)=>state.restaurant)
+  const restauran = useSelector((state) => state.restaurant);
   const [restaurant, setRestaurant] = useState([]);
   const [dishes, setDishes] = useState([]);
   const [headbg, setheadbg] = useState("transparent");
@@ -34,7 +34,6 @@ const Home = () => {
     }
   });
 
-
   function signout() {
     dispatch(logoutRestaurant());
     localStorage.setItem("restaurant", null);
@@ -45,7 +44,7 @@ const Home = () => {
     ...theme.typography.body2,
     padding: theme.spacing(2),
     textAlign: "center",
-    color: theme.palette.text.secondary,
+    color: theme.palette.text.secondary
   }));
 
   useEffect(() => {
@@ -64,7 +63,7 @@ const Home = () => {
           // M.toast({ html: responseData.data.error, classes: "#c62828 red darken-3" })
         } else {
           console.log(" dishes", responseData.data);
-         
+
           setDishes(responseData.data);
         }
       });
@@ -84,7 +83,7 @@ const Home = () => {
           console.log("restaurant", responseData.data);
           //console.log("resss ",customerData);
           localStorage.setItem("restaurant", JSON.stringify(responseData.data));
-          dispatch(loginRestaurant( responseData.data))
+          dispatch(loginRestaurant(responseData.data));
         }
       });
   };
@@ -129,7 +128,7 @@ const Home = () => {
           marginTop: 100,
           marginLeft: 80,
           width: "screen.width",
-          display: "flex",
+          display: "flex"
         }}
       >
         <Box sx={{ flexGrow: 1 }}>
@@ -137,7 +136,7 @@ const Home = () => {
             Welcome back {restaurant.rname}
           </div>
           <div>
-            {restaurant.profilepic && (
+            {/* {restaurant.profilepic && (
               <img
                 style={{
                   alignSelf: "center",
@@ -151,12 +150,20 @@ const Home = () => {
                 className="showProfile_img"
                 alt="restaurantImage"
               />
-            )}
+            )} */}
+
+            <Restaurantpic
+              imgKey={restaurant.profilepic}
+              name={restaurant.rname}
+              desc={restaurant.rdesc}
+              from={restaurant.fromTime}
+              to={restaurant.toTime}
+            />
           </div>
           <div className="name" style={{ paddingLeft: 40, fontSize: 18 }}>
             Your popular dishes
           </div>
-          <Grid container item xs={10} spacing={5}>
+          <Grid container item xs={10} spacing={15}>
             {dishes.map((dish) => (
               <Grid container item xs={4} key={dish.dishId}>
                 <Item>
@@ -177,7 +184,7 @@ const Home = () => {
       </div>
     </div>
   ) : (
-    <p/>
+    <p />
   );
 };
 

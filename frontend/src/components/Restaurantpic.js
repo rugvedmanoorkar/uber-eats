@@ -1,6 +1,6 @@
 import React from "react";
 import "./Restaurantpic.css";
-
+import Typography from "@mui/material/Typography";
 const Restaurantpic = ({ key, imgKey, name, desc, from, to }) => {
   return (
     <div className="cardres">
@@ -23,15 +23,27 @@ const Restaurantpic = ({ key, imgKey, name, desc, from, to }) => {
         )}
       </div>
       <div className="name">
-        <h1 style={{ fontFamily: "UberMove, sans-serif" }}>{name}</h1>
+        <h1
+          style={{
+            fontFamily: "UberMove, sans-serif",
+            textAlign: "center",
+            color: "green"
+          }}
+        >
+          {name}
+        </h1>
       </div>
       <div className="desc">
-        <p>{desc}</p>
-        <br></br>
-        <p>
-          Timings: {from} : {to}{" "}
-        </p>
+        {desc && (<p>{desc}</p>
+        )}
+        
+       
+          
+       
       </div>
+      <Typography variant="body2" gutterBottom sx ={{textAlign:"center"}}>
+            Open From: {from} To {to}{" "}
+          </Typography>
       <div className="name">
         <h2>Dishes picked for you</h2>
       </div>

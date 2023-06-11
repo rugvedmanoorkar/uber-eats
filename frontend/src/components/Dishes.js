@@ -10,16 +10,18 @@ import ReactDOM from "react-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addCart, orderPlaced } from "../actions/cartActions";
 import bcrypt from "bcryptjs";
-import Paper from '@mui/material/Paper';
-import ButtonBase from '@mui/material/ButtonBase';
-import { styled } from '@mui/material/styles';
+import Paper from "@mui/material/Paper";
+import ButtonBase from "@mui/material/ButtonBase";
+import { styled } from "@mui/material/styles";
+import { ToastContainer, toast } from "react-toastify";
+
 
 function Dishes({ dname, des, ing, imageKey, price, id, restaurantId, rname }) {
-  const Img = styled('img')({
-    margin: 'auto',
-    display: 'block',
-    maxWidth: '100%',
-    maxHeight: '100%',
+  const Img = styled("img")({
+    margin: "auto",
+    display: "block",
+    maxWidth: "100%",
+    maxHeight: "100%"
   });
   id = String(id);
   const cartId = bcrypt.hashSync(id, 10);
@@ -96,6 +98,15 @@ function Dishes({ dname, des, ing, imageKey, price, id, restaurantId, rname }) {
           invoiceId: invoiceId
         })
       );
+      toast.success("Added to Cart", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+      });
     } else {
       toggle();
       console.log(isShowing1);
@@ -166,7 +177,7 @@ function Dishes({ dname, des, ing, imageKey, price, id, restaurantId, rname }) {
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <Typography component="div" variant="h5">
+                {/* <Typography component="div" variant="h5">
                   {dish.dname}
                 </Typography>
                 <Typography
@@ -192,7 +203,40 @@ function Dishes({ dname, des, ing, imageKey, price, id, restaurantId, rname }) {
                     image={`/imageRestaurant/api/images/${imageKey}`}
                     alt="Live from space album cover"
                   />
-                )}
+                )} */}
+                <Grid item>
+                  <Img
+                    sx={{ width: 300, height: 150 }}
+                    alt="complex"
+                    src={`/imageRestaurant/api/images/${imageKey}`}
+                  />
+                </Grid>
+
+                <Grid item xs={12} sm container>
+                  <Grid item xs container direction="column" spacing={2}>
+                    <Grid item xs>
+                      <Typography
+                        gutterBottom
+                        variant="subtitle1"
+                        component="div"
+                      >
+                        {dname}
+                      </Typography>
+                      <Typography variant="body2" gutterBottom>
+                        Ingredients
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {ing}
+                      </Typography>
+                    </Grid>
+                    <Grid item></Grid>
+                  </Grid>
+                  <Grid item>
+                    <Typography variant="subtitle1" component="div">
+                      ${price}
+                    </Typography>
+                  </Grid>
+                </Grid>
                 <ButtonGroup size="small" aria-label="small button group">
                   {counter > 1 ? (
                     <Button
@@ -322,7 +366,6 @@ function Dishes({ dname, des, ing, imageKey, price, id, restaurantId, rname }) {
         class
         Name="root"
         style={{
-          border: "1px solid grey",
           cursor: "pointer"
         }}
       >
@@ -334,7 +377,7 @@ function Dishes({ dname, des, ing, imageKey, price, id, restaurantId, rname }) {
             setdish({ dname, des, ing, imageKey, price });
           }}
         >
-          <Grid
+          {/* <Grid
             container
             item
             xs={6}
@@ -374,37 +417,83 @@ function Dishes({ dname, des, ing, imageKey, price, id, restaurantId, rname }) {
             xs={6}
             style={{
               display: "flex",
-              justifyContent: "flex-end",
-              
+              justifyContent: "flex-end"
             }}
           >
             {imageKey && (
               <CardMedia
                 className="media"
                 component="img"
-                sx={{ maxWidth: 151 ,objectFit: "cover"}}
+                sx={{ maxWidth: 151, objectFit: "cover" }}
                 image={`/imageRestaurant/api/images/${imageKey}`}
                 alt="Live from space album cover"
               />
             )}
-          </Grid>
+          </Grid> */}
         </Grid>
         <Paper
-      sx={{
-        p: 2,
-        margin: 'auto',
-        maxWidth: 500,
-        flexGrow: 1,
-        backgroundColor: (theme) =>
-          theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-      }}
-    ><Grid container spacing={2}>
-    <Grid item>
-      <ButtonBase sx={{ width: 128, height: 128 }}>
-        <Img alt="complex" src={`/imageRestaurant/api/images/${imageKey}`} />
-      </ButtonBase>
-    </Grid></Grid></Paper>
+          sx={{
+            p: 2,
+            margin: "auto",
+            maxWidth: 500,
+            flexGrow: 1,
+            backgroundColor: (theme) =>
+              theme.palette.mode === "dark" ? "#1A2027" : "#fff"
+          }}
+        >
+          <Grid
+            container
+            spacing={2}
+            onClick={() => {
+              toggle();
+              setdish({ dname, des, ing, imageKey, price });
+            }}
+          >
+            <Grid item>
+              <ButtonBase sx={{ width: 128, height: 128 }}>
+                <Img
+                  alt="complex"
+                  src={`/imageRestaurant/api/images/${imageKey}`}
+                />
+              </ButtonBase>
+            </Grid>
+            <Grid item xs={12} sm container>
+              <Grid item xs container direction="column" spacing={2}>
+                <Grid item xs>
+                  <Typography gutterBottom variant="subtitle1" component="div">
+                    {dname}
+                  </Typography>
+                  <Typography variant="body2" gutterBottom>
+                    Ingredients
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {ing}
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Button variant="outlined">Click to Add</Button>
+                </Grid>
+              </Grid>
+              <Grid item>
+                <Typography variant="subtitle1" component="div">
+                  ${price}
+                </Typography>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Paper>
       </Card>
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 }

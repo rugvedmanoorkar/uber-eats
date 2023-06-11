@@ -54,6 +54,7 @@ function Login() {
     }
 
     const divStyle = {
+        textAlign: 'center',
         color: 'red'
       }; 
 

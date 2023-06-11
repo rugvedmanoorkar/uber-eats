@@ -99,7 +99,7 @@ app.use("/uploadroutes", customerImage);
 const orderRouter = require("./routes/orders");
 app.use("/orders", orderRouter);
 
-var server = app.listen(PORT, () => console.log(`Listening on port 5000.`));
+var server = app.listen(PORT, () => console.log(`Listening on port ${PORT}.`));
 
 module.exports = app;
 

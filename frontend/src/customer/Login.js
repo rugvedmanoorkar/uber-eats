@@ -52,6 +52,7 @@ function Login() {
   }
 
   const divStyle = {
+    textAlign:"center",
     color: "red"
   };
 
@@ -84,6 +85,7 @@ function Login() {
                 Next
               </button>
             </form>
+            
             <div className="login__text">
               <p>New to Uber?</p>
               <Link to="/cregister" className="login_ul">
